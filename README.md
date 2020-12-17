@@ -15,12 +15,16 @@
   -  一般用队列数据结构来辅助实现BFS算法。
 
 - 应用
+  
   - Dijkstra单源最短路径算法和Prim最小生成树算法都采用了和宽度优先搜索类似的思想
 - 参考链接
-  - [简书链接](https://www.jianshu.com/p/bff70b786bb6)
-
+  
+- [简书链接](https://www.jianshu.com/p/bff70b786bb6)
+  
 - 题目
   - #### [1091. 二进制矩阵中的最短路径](https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/)
 
   - #### [127. 单词接龙](https://leetcode-cn.com/problems/word-ladder/)
+  
+  - #### [107. 二叉树的层次遍历 II](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/)
 

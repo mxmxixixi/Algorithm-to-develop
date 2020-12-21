@@ -7,9 +7,9 @@
  * 
  */
 /**
- * 时间复杂度为O(n)，因为每个元素遍历了一次，n为元素的个数
- * 空间复杂度为O(2k)，k为二叉树中最底层元素的个数，queue存储一次，level存储一次
- */
+ * 第一种解题思路
+ * 误把root对象结构看成数组，所以结果不对
+*/
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -45,6 +45,35 @@ var levelOrderBottom = function (root) {
         if (level.length > 0) {
             rootReverse.unshift(level);
         }
+    }
+    return rootReverse
+};
+/**
+ * 第一种解题思路
+ * root根据提示函数TreeNode，可以找到对应节点的左右节点
+ * 时间复杂度为O(n+m)，因为每个元素遍历了一次，n为元素的个数，还有rootReverse的倒叙插入，m为rootReverse的长度
+ * 空间复杂度为O(2k+m)，k为二叉树中最底层元素的个数，queue存储一次，level存储一次,m为rootReverse的长度
+ */
+var levelOrderBottom = function (root) {
+    if (!root) {
+        return []
+    }
+    const queue = [root], rootReverse = []
+    let queueLength = queue.length
+    while (queue.length > 0) {
+        const level = []
+        queueLength = queue.length
+        while (queueLength--) {
+            const node = queue.shift();
+            level.push(node.val)
+            if (node.left) {
+                queue.push(node.left)
+            }
+            if (node.right) {
+                queue.push(node.right)
+            }
+        }
+        rootReverse.unshift(level)
     }
     return rootReverse
 };

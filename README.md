@@ -27,4 +27,8 @@
   - #### [127. 单词接龙](https://leetcode-cn.com/problems/word-ladder/)
   
   - #### [107. 二叉树的层次遍历 II](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/)
+  
+  - #### [279. 完全平方数](https://leetcode-cn.com/problems/perfect-squares/)
+  
+  - #### [116. 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/)
 

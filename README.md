@@ -33,4 +33,6 @@
   - #### [116. 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/)
   
   - #### [690. 员工的重要性](https://leetcode-cn.com/problems/employee-importance/)
+  
+  - #### [1306. 跳跃游戏 III](https://leetcode-cn.com/problems/jump-game-iii/)
 

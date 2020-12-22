@@ -31,4 +31,6 @@
   - #### [279. 完全平方数](https://leetcode-cn.com/problems/perfect-squares/)
   
   - #### [116. 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/)
+  
+  - #### [690. 员工的重要性](https://leetcode-cn.com/problems/employee-importance/)
 

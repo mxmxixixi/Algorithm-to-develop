@@ -7,7 +7,7 @@
  * 要寻找的数一直在0-x之间，因此就是形成了一个有序的循环
  * 在直接循环从0-x就是可以的，但是有序的这个条件并没有使用，因此二分法的思想刚好用上
  * 二分法主要是找中间值进行判断条件，之后判断指针移动
- *时间复杂度o(logn),空间复杂度o(1)
+ *时间复杂度o(logN),空间复杂度o(1)
  */
 var mySqrt = function(x) {
     let left=0,right=x
@@ -28,7 +28,8 @@ var mySqrt = function(x) {
 };
 <font color="red"></font>
 /**
- *第二次解题思路[看二分法思想后]:
+ *第二次解题思路[看二分法思想后]
+ *时间复杂度o(logN),空间复杂度o(1)
 */
 var mySqrt = function(x) {
     let left=0,right=x,ans=0

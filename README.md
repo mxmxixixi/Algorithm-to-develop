@@ -23,6 +23,10 @@
 
   - #### [744. 寻找比目标字母大的最小字母](https://leetcode-cn.com/problems/find-smallest-letter-greater-than-target/)
 
+  - #### [540. 有序数组中的单一元素](https://leetcode-cn.com/problems/single-element-in-a-sorted-array/)
+
+  - #### [278. 第一个错误的版本](https://leetcode-cn.com/problems/first-bad-version/)
+
 ##### 广度优先搜索
 
 - 概念

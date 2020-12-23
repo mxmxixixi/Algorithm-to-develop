@@ -9,7 +9,7 @@
  * 已经有顺序的数组中找到比目标字母大的最小字母，
  * 首先先找到比目标字母大的字母，所以可以使用二分法
  * 首先判断排序字符是升序还是降序，通过升序与降序左右指针的移动不同
- * 时间复杂度o(logn),空间复杂度o(1)
+ * 时间复杂度o(logN),空间复杂度o(1)
  */
 var nextGreatestLetter = function(letters, target) {
     let sort =''
@@ -42,7 +42,7 @@ var nextGreatestLetter = function(letters, target) {
 /**
  * 第二次解题思路[看题解后]
  * 这个题还有一个规律就是当给的目标字段不在letters的字符所包含的范围内，那就取第一个值，这种运算可以用模
- * 时间复杂度o(logn),空间复杂度o(1)
+ * 时间复杂度o(logN),空间复杂度o(1)
  */
 var nextGreatestLetter = function(letters, target) {
     let sort =''

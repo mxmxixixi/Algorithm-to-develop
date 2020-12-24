@@ -59,4 +59,6 @@
   - #### [690. 员工的重要性](https://leetcode-cn.com/problems/employee-importance/)
 
   - #### [1306. 跳跃游戏 III](https://leetcode-cn.com/problems/jump-game-iii/)
+  
+  - #### [1391. 检查网格中是否存在有效路径](https://leetcode-cn.com/problems/check-if-there-is-a-valid-path-in-a-grid/)
 

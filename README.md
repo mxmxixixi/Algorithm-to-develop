@@ -61,4 +61,5 @@
   - #### [1306. 跳跃游戏 III](https://leetcode-cn.com/problems/jump-game-iii/)
   
   - #### [1391. 检查网格中是否存在有效路径](https://leetcode-cn.com/problems/check-if-there-is-a-valid-path-in-a-grid/)
-
+  
+  - #### [752. 打开转盘锁](https://leetcode-cn.com/problems/open-the-lock/)

@@ -85,7 +85,7 @@
 
   - 深度优先搜索是一个对图进行搜索的算法，简称Depth-First-Search，DFS；
   - 从图的起点开始搜索直到到达目标结点，深度优先搜索会沿着一条路径不断往下搜索直到不能再继续为止，然后再折返，开始搜索下一条候补路径；
-  - 每个节点只访问一次，所有节点采用先入后出的思想，因此采用栈结构来存储候补节点
+  - 每个节点只访问一次，所有节点采用先入后出的思想，因此采用栈结构来存储候补节点；也可以使用递归来进行访问节点
 
 - 应用
 
@@ -95,44 +95,84 @@
 
 - JavaScript实现思路
 
-  - 声明一个函数，参数为：需要查找的树，需要查找的结点
-  - 用数组模拟栈，将要查找的树放入栈中
-  - 遍历栈，直至栈中的数据为空
-  - 取出栈顶元素，判断其是否有子结点
-  - 如果存在子结点，遍历子结点将其放入栈中，遍历时需要确保它是**从左到右遍历**
-  - 判断当前栈顶的元素是否与要查找的元素相等，如果相等则返回当前元素
-  - 栈中数据全部遍历后，还是没找到目标结点，则证明目标结点不在树中，返回false
+  - 使用栈结构
 
-  ```javascript
-  /** 
-  * 深度优先搜索 
-  * @param tree 需要查找的树 
-  * @param target 需要查找的结点 
-  * @returns {{children}|*|undefined|boolean} 
-  */
-  function depthFirstSearch (tree, target) {    
-    // 用数组模拟栈，将树放进栈中    
-    let stack = [tree];    
-    while(stack.length!==0){       
-      // 取出数组的最后一个元素(栈顶)        
-      const stackTop = stack.pop();        
-      // 判断当前栈是否有子结点        
-      if (stackTop.children && stackTop.children.length) {            
-        /**            
-        * 将子结点入栈：            
-        *  1. 使用扩展运算符取出参数对象,使用reverse方法将数组中的元素进行颠倒            
-        *  2. 使用扩展运算符取出颠倒后数组中的对象             
-        *  3. 将取出的对象放进栈中             
-        */           
-        stack.push(...[...stackTop.children].reverse());        }       
-      	// 判断当前栈顶的元素是否为目标值        
-      	if (stackTop.value === target) {            
-          return stackTop;        
+    - 声明一个函数，参数为：需要查找的树，需要查找的结点
+    - 用数组模拟栈，将要查找的树放入栈中
+    - 遍历栈，直至栈中的数据为空
+    - 取出栈顶元素，判断其是否有子结点
+    - 如果存在子结点，遍历子结点将其放入栈中，遍历时需要确保它是**从左到右遍历**
+    - 判断当前栈顶的元素是否与要查找的元素相等，如果相等则返回当前元素
+    - 栈中数据全部遍历后，还是没找到目标结点，则证明目标结点不在树中，返回false
+
+    ```
+      /** 
+      * 深度优先搜索 
+      * @param tree 需要查找的树 
+      * @param target 需要查找的结点 
+      * @returns {{children}|*|undefined|boolean} 
+      */
+      function depthFirstSearch (tree, target) {    
+        // 用数组模拟栈，将树放进栈中    
+        let stack = [tree];    
+        while(stack.length!==0){       
+          // 取出数组的最后一个元素(栈顶)        
+          const stackTop = stack.pop();        
+          // 判断当前栈是否有子结点        
+          if (stackTop.children && stackTop.children.length) {            
+            /**            
+            * 将子结点入栈：            
+            *  1. 使用扩展运算符取出参数对象,使用reverse方法将数组中的元素进行颠倒            
+            *  2. 使用扩展运算符取出颠倒后数组中的对象             
+            *  3. 将取出的对象放进栈中             
+            */           
+            stack.push(...[...stackTop.children].reverse());        }       
+            // 判断当前栈顶的元素是否为目标值        
+            if (stackTop.value === target) {            
+              return stackTop;        
+            }    
         }    
-    }    
-    return false;
-  }
-  ```
+        return false;
+      }
+    ```
+
+  - 使用递归
+
+    - 深度 优先搜索的思想是一致的；只不过此种方法使用递归进行深度搜索
+
+    ```javascript
+     /** 
+      * 深度优先搜索 
+      * @param grid 需要查找的二维矩阵
+      * @returns {number} 
+      */
+      function depthFirstSearch (grid) {    
+        let ans = 0;
+        const rowLength = grid.length,columnLength = grid[0].length
+        const def = (row,column)=>{
+            if(row<0||row>=rowLength||column<0||column>=columnLength||grid[row][column] === 0){
+                return 0
+            }
+            let island = 1
+            grid[row][column]=0
+            island+=def(row-1,column)
+            island+=def(row+1,column)
+            island+=def(row,column-1)
+            island+=def(row,column+1)
+            return island
+        };
+        for(let row=0;row<rowLength;row++){
+            for(let column =0;column<columnLength;column++){
+                if(grid[row][column] ===1){
+                    ans=Math.max(ans,def(row,column))
+                }
+            }
+        }
+        return ans
+    }
+    ```
+
+    
 
   
 

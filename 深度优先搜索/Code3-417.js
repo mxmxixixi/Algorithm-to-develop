@@ -18,12 +18,12 @@
  * 空间复杂度为O(R∗C)，递归的深度最大可能是整个网格的大小。
  */
 var pacificAtlantic = function(matrix) {
-  const m = matrix.length,n= (matrix[0]||[]).length;
+    const m = matrix.length,n= (matrix[0]||[]).length;
     if(m === 0||n===0){
         return []
     }
     const moveDirection = [-1,0,1,0,-1],result=new Set(),visited = new Set(),_result = [];
-    const def = (type,value,i,j)=>{
+    const def = (type,i,j)=>{
         if(type === 'pacific'){
         result.add(`${i}-${j}`)
         }else{
@@ -38,26 +38,26 @@ var pacificAtlantic = function(matrix) {
         if(matrix[row] === undefined ||matrix[row][column] === undefined || visited.has(`${row}-${column}`)){
             return
         }
-        if(matrix[row][column]>=value){
-            def(type,matrix[row][column],row,column)
+        if(matrix[row][column]>=matrix[i][j]){
+            def(type,row,column)
         }
         })
         return false
     }
     //可以流入太平洋的点
     for(let i=0;i<m;i++){
-        def('pacific',matrix[i][0],i,0)
+        def('pacific',i,0)
     }
     for(let j=0;j<n;j++){
-        def('pacific',matrix[0][j],0,j)
+        def('pacific',0,j)
     }
     visited.clear()
     //可以流入大西洋的点
     for(let i=m-1;i>=0;i--){
-        def('Atlantic',matrix[i][n-1],i,n-1)
+        def('Atlantic',i,n-1)
     }
     for(let j=n-1;j>=0;j--){
-        def('Atlantic',matrix[m-1][j],m-1,j)
+        def('Atlantic',m-1,j)
     }
     return _result
 };

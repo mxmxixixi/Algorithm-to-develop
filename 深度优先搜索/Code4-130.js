@@ -9,6 +9,8 @@
  */
 /**
  * 第一种解题思路:使用递归
+ * 不被"X",包围的"O",特点:一定可由边界延申触及到，因此从边界开始循环寻找和边界相连的O
+ * 寻找后把O变成M，之后再次循环二位数组，把M重置成O，O变成x
  */
 var solve = function(board) {
     const m = board.length,n=(board[0]||[]).length
@@ -18,7 +20,7 @@ var solve = function(board) {
     const visited = new Set(),moveDirection = Array.of(-1, 0, 1, 0, -1)
     let area = [];
     const def = (i,j)=>{
-        if(board[i] === undefined || board[i][j] === undefined || visited.has(`${i}-${j}` || board[i][j] === 'X')){
+        if(board[i] === undefined || board[i][j] === undefined || visited.has(`${i}-${j}`) || board[i][j] === 'X'){
             return
         }
         board[i][j] = 'M'
@@ -29,12 +31,12 @@ var solve = function(board) {
         })
     }
     for(let i=0;i<m;i++){
-        def(i,0)
-        def(i,n-1)
+        board[i][0] === 'O' && def(i,0)
+        board[i][n-1] === 'O' && def(i,n-1)
     }
     for(let j=0;j<n;j++){
-        def(0,j)
-        def(m-1,j)
+        board[0][j] === 'O' && def(0,j)
+        board[m-1][j] === 'O' && def(m-1,j)
     }
     for (let i = 0; i < m; i++) {
         for (let j = 0; j < n; j++) {

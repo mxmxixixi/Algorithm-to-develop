@@ -189,3 +189,5 @@
   - #### [547. 省份数量](https://leetcode-cn.com/problems/number-of-provinces/)
   
   - #### [971. 翻转二叉树以匹配先序遍历](https://leetcode-cn.com/problems/flip-binary-tree-to-match-preorder-traversal/)
+  
+  - #### [529. 扫雷游戏](https://leetcode-cn.com/problems/minesweeper/)

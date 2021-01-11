@@ -1,3 +1,4 @@
+NODE_OPTIONS='--experimental-specifier-resolution=node loader=./loader.mjs'
 import CreateBinaryTree from '../ArrToTree.js'
 /**
  * 解题思路

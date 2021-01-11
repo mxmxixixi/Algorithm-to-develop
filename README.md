@@ -1,13 +1,13 @@
-# 前端-算法养成
+## 前端-算法养成
 
-#### 算法养成
+### 算法养成
 
 - 主要是跟着力扣中题解的推荐题目以及类似题目、每日一题进行刷题
 - 刷题顺序:哈希表、栈结构、桶计数、贪心算法、二分法、广度优先搜索
 
-#### 分类题目
+### 分类题目
 
-##### 二分法
+#### 二分法
 
 - 概念
 
@@ -27,7 +27,7 @@
 
   - #### [278. 第一个错误的版本](https://leetcode-cn.com/problems/first-bad-version/)
 
-##### 双指针
+#### 双指针
 
 - 概念
 
@@ -41,7 +41,7 @@
 
   - #### [680. 验证回文字符串 Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/)
 
-##### 广度优先搜索
+#### 广度优先搜索
 
 - 概念
 
@@ -79,7 +79,7 @@
   
   - #### [752. 打开转盘锁](https://leetcode-cn.com/problems/open-the-lock/)
 
-##### 深度优先搜索
+#### 深度优先搜索
 
 - 概念
 
@@ -191,3 +191,9 @@
   - #### [971. 翻转二叉树以匹配先序遍历](https://leetcode-cn.com/problems/flip-binary-tree-to-match-preorder-traversal/)
   
   - #### [529. 扫雷游戏](https://leetcode-cn.com/problems/minesweeper/)
+
+#### 字符串
+
+- 题目
+
+  - #### [468. 验证IP地址](https://leetcode-cn.com/problems/validate-ip-address/)

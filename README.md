@@ -192,8 +192,15 @@
   
   - #### [529. 扫雷游戏](https://leetcode-cn.com/problems/minesweeper/)
 
-#### 字符串
+#### 分治算法
+
+- 概念
+
+  - 分治法是构建基于多项分支递归的一种很重要的算法范式。字面上的解释是「分而治之」，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。
+  - 在这广义之下，所有使用递归或循环的算法均被视作“分治算法”
 
 - 题目
 
   - #### [468. 验证IP地址](https://leetcode-cn.com/problems/validate-ip-address/)
+
+  - #### [240. 搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii/)

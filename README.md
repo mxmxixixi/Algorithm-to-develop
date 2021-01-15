@@ -240,7 +240,38 @@
 - 代码实现
 
   ```javascript
-  //
+  //快速排序
+  //此处示例的降序
+  const quickSort = (_left:number,_right:number) => {
+    if(_left>=_right){
+      return
+    }
+    let left = _left,right = _right
+    const standard = nums[left];
+    //在以一个基准进行排序时，跳出条件是两个指针相遇
+    while(left<right){
+      //因为以左指针为基准所以先从右指针向前找，找到第一个大于基准数的坐标，此判断条件有两个一个是指针，一个是与基准的大小，两个条件都是必要的；
+      while(left<right && nums[right]<=standard){
+        right--
+      }
+      //当找到第一个大于基准的数进行填坑行为，必须要加指针的判断条件，因为不能判断上面的循环跳出条件是哪一个，有可能是指针不符合条件，如果指针不符合条件，则不需要填坑行为
+      if(left<right){
+        nums[left++] = nums[right]
+      }
+      while(left<right && nums[left]>=standard){
+        left++
+      }
+      if(left<right){
+        nums[right--] = nums[left]
+      }
+    }
+    //一轮基准结束，讲基准数填入到跳出条件的坑
+    nums[left] = standard;
+    //以基准为线，进行左右两侧的递归
+    quickSort(_left,left-1);
+    quickSort(left+1,_right);
+  }
+  quickSort(0,nums.length-1)
   ```
 
 - 题目

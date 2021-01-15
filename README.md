@@ -74,16 +74,16 @@
   - #### [690. 员工的重要性](https://leetcode-cn.com/problems/employee-importance/)
 
   - #### [1306. 跳跃游戏 III](https://leetcode-cn.com/problems/jump-game-iii/)
-  
+
   - #### [1391. 检查网格中是否存在有效路径](https://leetcode-cn.com/problems/check-if-there-is-a-valid-path-in-a-grid/)
-  
+
   - #### [752. 打开转盘锁](https://leetcode-cn.com/problems/open-the-lock/)
 
 #### 深度优先搜索
 
 - 概念
 
-  - 深度优先搜索是一个对图进行搜索的算法，简称Depth-First-Search，DFS；
+  - 深度优先搜索是一个对图进行搜索的算法，简称 Depth-First-Search，DFS；
   - 从图的起点开始搜索直到到达目标结点，深度优先搜索会沿着一条路径不断往下搜索直到不能再继续为止，然后再折返，开始搜索下一条候补路径；
   - 每个节点只访问一次，所有节点采用先入后出的思想，因此采用栈结构来存储候补节点；也可以使用递归来进行访问节点
 
@@ -93,7 +93,7 @@
 
   - [掘金](https://juejin.cn/post/6844904142658338830)
 
-- JavaScript实现思路
+- JavaScript 实现思路
 
   - 使用栈结构
 
@@ -103,7 +103,7 @@
     - 取出栈顶元素，判断其是否有子结点
     - 如果存在子结点，遍历子结点将其放入栈中，遍历时需要确保它是**从左到右遍历**
     - 判断当前栈顶的元素是否与要查找的元素相等，如果相等则返回当前元素
-    - 栈中数据全部遍历后，还是没找到目标结点，则证明目标结点不在树中，返回false
+    - 栈中数据全部遍历后，还是没找到目标结点，则证明目标结点不在树中，返回 false
 
     ```
       /** 
@@ -141,55 +141,58 @@
     - 深度 优先搜索的思想是一致的；只不过此种方法使用递归进行深度搜索
 
     ```javascript
-     /** 
-      * 深度优先搜索 
-      * @param grid 需要查找的二维矩阵
-      * @returns {number} 
-      */
-      function depthFirstSearch (grid) {    
-        let ans = 0;
-        const rowLength = grid.length,columnLength = grid[0].length
-        const def = (row,column)=>{
-            if(row<0||row>=rowLength||column<0||column>=columnLength||grid[row][column] === 0){
-                return 0
-            }
-            let island = 1
-            grid[row][column]=0
-            island+=def(row-1,column)
-            island+=def(row+1,column)
-            island+=def(row,column-1)
-            island+=def(row,column+1)
-            return island
-        };
-        for(let row=0;row<rowLength;row++){
-            for(let column =0;column<columnLength;column++){
-                if(grid[row][column] ===1){
-                    ans=Math.max(ans,def(row,column))
-                }
-            }
+    /**
+     * 深度优先搜索
+     * @param grid 需要查找的二维矩阵
+     * @returns {number}
+     */
+    function depthFirstSearch(grid) {
+      let ans = 0;
+      const rowLength = grid.length,
+        columnLength = grid[0].length;
+      const def = (row, column) => {
+        if (
+          row < 0 ||
+          row >= rowLength ||
+          column < 0 ||
+          column >= columnLength ||
+          grid[row][column] === 0
+        ) {
+          return 0;
         }
-        return ans
+        let island = 1;
+        grid[row][column] = 0;
+        island += def(row - 1, column);
+        island += def(row + 1, column);
+        island += def(row, column - 1);
+        island += def(row, column + 1);
+        return island;
+      };
+      for (let row = 0; row < rowLength; row++) {
+        for (let column = 0; column < columnLength; column++) {
+          if (grid[row][column] === 1) {
+            ans = Math.max(ans, def(row, column));
+          }
+        }
+      }
+      return ans;
     }
     ```
-
-    
-
-  
 
 - 题目
 
   - #### [695. 岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/)
-  
+
   - #### [200. 岛屿数量](https://leetcode-cn.com/problems/number-of-islands/)
-  
+
   - #### [417. 太平洋大西洋水流问题](https://leetcode-cn.com/problems/pacific-atlantic-water-flow/)
-  
+
   - #### [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/)
-  
+
   - #### [547. 省份数量](https://leetcode-cn.com/problems/number-of-provinces/)
-  
+
   - #### [971. 翻转二叉树以匹配先序遍历](https://leetcode-cn.com/problems/flip-binary-tree-to-match-preorder-traversal/)
-  
+
   - #### [529. 扫雷游戏](https://leetcode-cn.com/problems/minesweeper/)
 
 #### 分治算法
@@ -201,7 +204,7 @@
 
 - 题目
 
-  - #### [468. 验证IP地址](https://leetcode-cn.com/problems/validate-ip-address/)
+  - #### [468. 验证 IP 地址](https://leetcode-cn.com/problems/validate-ip-address/)
 
   - #### [240. 搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii/)
 
@@ -228,13 +231,13 @@
 
     > 实际上无论怎么选择基准，都不会影响排序结果，**但是不同的选择却可能影响整体排序时间**，因为基准选择不同，会导致分割的两个集合大小不同，如果分割之后，两个集合大小是几乎相等的，那么我们**整体分割的次数显然也会减少，这样整体耗费的时间也相应降低**
 
-    - 如果待排序数是随机的，那么选择第一个或者最后一个作基准是没有什么问题的，这也是我们最常见到的选择方案。但如果待排序数据已经排好序的，就**会产生一个很糟糕的分割**。几乎所有的数据都被分割到一个集合中，而另一个集合没有数据。这样的情况下，**时间花费了，却没有做太多实事**。而它的时间复杂度就是最差的情况O(N^2)。**因此这种策略是绝对不推荐的**,所以出现极端情况后应该使用归并排序；
+    - 如果待排序数是随机的，那么选择第一个或者最后一个作基准是没有什么问题的，这也是我们最常见到的选择方案。但如果待排序数据已经排好序的，就**会产生一个很糟糕的分割**。几乎所有的数据都被分割到一个集合中，而另一个集合没有数据。这样的情况下，**时间花费了，却没有做太多实事**。而它的时间复杂度就是最差的情况 O(N^2)。**因此这种策略是绝对不推荐的**,所以出现极端情况后应该使用归并排序；
     - 从前面的描述我们知道，如果能够选择到数据的中值，那是最好的，因为它能够将集合近乎等分为二。但是很多时候很难算出中值，并且会耗费计算时间。因此我们随机选取三个元素，并用它们的中值作为整个数据中值的估计值。在这里，我们选择最左端，最右端和中间位置的三个元素的中间值作为基准，这种方法不推荐
 
   - 性能
 
-    - 时间复杂度：平均情况o(Nlog2N)，最坏情况o(N2),最好情况o(Nlog2N),当数据有序时，以第一个关键字为基准分为两个子序列，前一个子序列为空，此时执行效率最差。而当数据随机分布时，以第一个关键字为基准分为两个子序列，两个子序列的元素个数接近相等，此时执行效率最好，所以，数据越随机分布时，快速排序性能越好；数据越接近有序，快速排序性能越差；
-    - 空间复杂度：快速排序在每次分割的过程中，需要 1 个空间存储基准值。而快速排序的大概需要 Nlog2N次的分割处理，所以占用空间也是 Nlog2N 个。
+    - 时间复杂度：平均情况 o(Nlog2N)，最坏情况 o(N2),最好情况 o(Nlog2N),当数据有序时，以第一个关键字为基准分为两个子序列，前一个子序列为空，此时执行效率最差。而当数据随机分布时，以第一个关键字为基准分为两个子序列，两个子序列的元素个数接近相等，此时执行效率最好，所以，数据越随机分布时，快速排序性能越好；数据越接近有序，快速排序性能越差；
+    - 空间复杂度：快速排序在每次分割的过程中，需要 1 个空间存储基准值。而快速排序的大概需要 Nlog2N 次的分割处理，所以占用空间也是 Nlog2N 个。
     - 稳定性：在快速排序中，相等元素可能会因为分区而交换顺序，所以它是不稳定的算法。
 
 - 代码实现
@@ -242,51 +245,54 @@
   ```javascript
   //快速排序
   //此处示例的降序
-  const quickSort = (_left:number,_right:number) => {
-    if(_left>=_right){
-      return
+  const quickSort = (_left: number, _right: number) => {
+    if (_left >= _right) {
+      return;
     }
-    let left = _left,right = _right
+    let left = _left,
+      right = _right;
     const standard = nums[left];
     //在以一个基准进行排序时，跳出条件是两个指针相遇
-    while(left<right){
+    while (left < right) {
       //因为以左指针为基准所以先从右指针向前找，找到第一个大于基准数的坐标，此判断条件有两个一个是指针，一个是与基准的大小，两个条件都是必要的；
-      while(left<right && nums[right]<=standard){
-        right--
+      while (left < right && nums[right] <= standard) {
+        right--;
       }
       //当找到第一个大于基准的数进行填坑行为，必须要加指针的判断条件，因为不能判断上面的循环跳出条件是哪一个，有可能是指针不符合条件，如果指针不符合条件，则不需要填坑行为
-      left<right && (nums[left++] = nums[right])
-      while(left<right && nums[left]>=standard){
-        left++
+      left < right && (nums[left++] = nums[right]);
+      while (left < right && nums[left] >= standard) {
+        left++;
       }
-      left<right && (nums[right--] = nums[left])
+      left < right && (nums[right--] = nums[left]);
     }
     //一轮基准结束，讲基准数填入到跳出条件的坑
     nums[left] = standard;
     //以基准为线，进行左右两侧的递归
-    quickSort(_left,left-1);
-    quickSort(left+1,_right);
-  }
-  quickSort(0,nums.length-1)
+    quickSort(_left, left - 1);
+    quickSort(left + 1, _right);
+  };
+  quickSort(0, nums.length - 1);
   ```
 
 - 题目
 
-  - #### [215. 数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
-  
+  - #### [215. 数组中的第 K 个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
+
   - #### [912. 排序数组](https://leetcode-cn.com/problems/sort-an-array/)
-  
-  - #### [1387. 将整数按权重排序](https://leetcode-cn.com/problems/sort-integers-by-the-power-value/)
+
 
 ##### 插入排序
 
- - 概念
-    - 插入排序，一般也被称为直接插入排序；
-    - 使用情况，我认为适用于已经有一定顺序的情况，才使用插入排序，或者排序的数据是动态生成的，可以在每一项数据生成时直接进行排序，否则可以使用快速排序，提升性能
-    - 插入排序的基本思想是：每次将1个待排序的记录按其关键字大小插入到前面已经排好序的子序列中，寻找最适当的位置，直至全部记录插入完毕。执行过程中，若遇到和插入元素相等的位置，则将要插人的元素放在该相等元素的后面，因此插入该元素后并未改变原序列的前后顺序。插入排序也是一种稳定的排序方法。插入排序分直接插入排序(稳定)、折半插入排序和希尔排序(不稳定)3类；
-    - 性能
-       - 时间复杂度：
-          - 最优的情况:在插入排序中，当待排序数组是有序时,只需当前数跟前一个数比较一下就可以了，这时一共需要比较N- 1次，时间复杂度为O(N)
-          - 最坏的情况:是待排序数组是逆序的，此时需要比较次数最多，总次数记为：1+2+3+…+N-1，所以，插入排序最坏情况下的时间复杂度为O(N<sup>2</sup>)
-          - 平均来说，A[1..j-1]中的一半元素小于A[j]，一半元素大于A[j]。插入排序在平均情况运行时间与最坏情况运行时间一样，是O(N<sup>2</sup>);
-      - 空间复杂度：插入排序的空间复杂度为常数阶O(1)
+- 概念
+  - 插入排序，一般也被称为直接插入排序；
+  - 使用情况，我认为适用于已经有一定顺序的情况，才使用插入排序，或者排序的数据是动态生成的，可以在每一项数据生成时直接进行排序，否则可以使用快速排序，提升性能
+  - 插入排序的基本思想是：每次将 1 个待排序的记录按其关键字大小插入到前面已经排好序的子序列中，寻找最适当的位置，直至全部记录插入完毕。执行过程中，若遇到和插入元素相等的位置，则将要插人的元素放在该相等元素的后面，因此插入该元素后并未改变原序列的前后顺序。插入排序也是一种稳定的排序方法。插入排序分直接插入排序(稳定)、折半插入排序和希尔排序(不稳定)3 类；
+  - 性能
+    - 时间复杂度：
+      - 最优的情况:在插入排序中，当待排序数组是有序时,只需当前数跟前一个数比较一下就可以了，这时一共需要比较 N- 1 次，时间复杂度为 O(N)
+      - 最坏的情况:是待排序数组是逆序的，此时需要比较次数最多，总次数记为：1+2+3+…+N-1，所以，插入排序最坏情况下的时间复杂度为 O(N<sup>2</sup>)
+      - 平均来说，A[1..j-1]中的一半元素小于 A[j]，一半元素大于 A[j]。插入排序在平均情况运行时间与最坏情况运行时间一样，是 O(N<sup>2</sup>);
+    - 空间复杂度：插入排序的空间复杂度为常数阶 O(1)
+- 题目
+  - [1387. 将整数按权重排序](https://leetcode-cn.com/problems/sort-integers-by-the-power-value/)
+

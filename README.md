@@ -279,6 +279,8 @@
   - #### [215. 数组中的第 K 个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
 
   - #### [912. 排序数组](https://leetcode-cn.com/problems/sort-an-array/)
+  
+  - #### [1630. 等差子数组](https://leetcode-cn.com/problems/arithmetic-subarrays/)
 
 
 ##### 插入排序

@@ -281,7 +281,11 @@
   - #### [912. 排序数组](https://leetcode-cn.com/problems/sort-an-array/)
   
   - #### [1630. 等差子数组](https://leetcode-cn.com/problems/arithmetic-subarrays/)
-
+  
+  - #### [1329. 将矩阵按对角线排序](https://leetcode-cn.com/problems/sort-the-matrix-diagonally/)
+  
+  - #### [56. 合并区间](https://leetcode-cn.com/problems/merge-intervals/)
+  
 
 ##### 插入排序
 
@@ -299,5 +303,5 @@
   
   - [1387. 将整数按权重排序](https://leetcode-cn.com/problems/sort-integers-by-the-power-value/)
   
-  - #### [1329. 将矩阵按对角线排序](https://leetcode-cn.com/problems/sort-the-matrix-diagonally/)
+  - #### 
 

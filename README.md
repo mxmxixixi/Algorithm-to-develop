@@ -249,8 +249,8 @@
     if (_left >= _right) {
       return;
     }
-    let left = _left,
-      right = _right;
+    let left = _left,right = _right;
+    //按照数据以及数据量的不同，选择不同的基准
     const standard = nums[left];
     //在以一个基准进行排序时，跳出条件是两个指针相遇
     while (left < right) {
@@ -286,6 +286,8 @@
   
   - #### [56. 合并区间](https://leetcode-cn.com/problems/merge-intervals/)
   
+  - #### [1508. 子数组和排序后的区间和](https://leetcode-cn.com/problems/range-sum-of-sorted-subarray-sums/)
+  
 
 ##### 插入排序
 
@@ -303,5 +305,5 @@
   
   - [1387. 将整数按权重排序](https://leetcode-cn.com/problems/sort-integers-by-the-power-value/)
   
-  - #### 
+  - 
 

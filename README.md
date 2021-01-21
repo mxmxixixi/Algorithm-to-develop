@@ -303,7 +303,13 @@
     - 空间复杂度：插入排序的空间复杂度为常数阶 O(1)
 - 题目
   
-  - [1387. 将整数按权重排序](https://leetcode-cn.com/problems/sort-integers-by-the-power-value/)
+  - #### [1387. 将整数按权重排序](https://leetcode-cn.com/problems/sort-integers-by-the-power-value/)
   
-  - 
+  - #### [147. 对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list/)
+  
+
+##### TimSort
+
+ - 概念
+   	- [参考链接](https://juejin.cn/post/6844904131518267400)
 

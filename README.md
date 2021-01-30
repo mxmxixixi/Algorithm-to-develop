@@ -342,7 +342,28 @@
     - **合并（Combine）**：合并两个已排序的子序列，得到排序结果。
 
     - ```javascript
+      const merge = (left,right)=>{
+        var temp=[];
+        while(left.length&&right.length){
+          if(left[0]<=right[0]){
+            temp.push(left.shift());
+          }else{
+            temp.push(right.shift());
+          }
+        }
+        //left和right长度不一样时，直接连接剩下的长的部分（本身有序）
+        return temp.concat(left,right);
       
+      }
+      const mergeSort = (data)=>{
+        if(data.length<=1){
+          return data;
+        }
+        var mid=Math.floor(data.length/2);
+        var left=data.slice(0,mid);
+        var right=data.slice(mid);
+        return  merge(mergeSort(left),mergeSort(right));
+      }
       ```
 
   - **自底向上方法**，也就是常说的**二路归并排序**，其基本思想是：第 1 趟排序将长度为 n 的待排序记录看作 n 个长度为 1 的有序子序列，然后将这些子序列两两合并。完成第 1 趟排序之后，将得到 lgn 个长度为 2 的有序子序列（如果 n 为奇数，则最后还有一个长度为 1 的子序列）。第 2 趟排序是在第 1 趟的排序的基础上，将这 lgn 个长度为 2 的子序列两两合并。如此反复，直到最后得到一个长度为n的有序文件为止。从这个排序过程来看，二路归并排序是从将长度为 1 的子序列排序变化到长度为 n 的有序序列，因而是自底向上的。

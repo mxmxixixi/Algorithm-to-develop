@@ -405,4 +405,6 @@
   - #### [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/)
   
   - #### [62. 不同路径](https://leetcode-cn.com/problems/unique-paths/)
+  
+  - #### [413. 等差数列划分](https://leetcode-cn.com/problems/arithmetic-slices/)
 

@@ -408,3 +408,11 @@
   
   - #### [413. 等差数列划分](https://leetcode-cn.com/problems/arithmetic-slices/)
 
+#### 滑动窗口
+
+- 概念
+  - 涉及到子串，使用滑动窗口思想
+
+ - 题目
+
+   	- #### [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)

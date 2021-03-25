@@ -214,6 +214,12 @@
 
   - #### [240. 搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii/)
 
+#### 贪心算法
+
+- 题目
+
+  - #### [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
+
 #### 排序算法
 
 - 概念
@@ -407,12 +413,15 @@
   - #### [62. 不同路径](https://leetcode-cn.com/problems/unique-paths/)
   
   - #### [413. 等差数列划分](https://leetcode-cn.com/problems/arithmetic-slices/)
+  
+  - #### [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
 
 #### 滑动窗口
 
 - 概念
-  - 涉及到子串，使用滑动窗口思想
-
+  
+- 涉及到子串，使用滑动窗口思想
+  
  - 题目
 
    	- #### [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)

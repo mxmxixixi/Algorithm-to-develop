@@ -46,6 +46,8 @@
   - #### [125. 验证回文串](https://leetcode-cn.com/problems/valid-palindrome/)
 
   - #### [680. 验证回文字符串 Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/)
+  
+  - #### [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
 
 #### 广度优先搜索
 
@@ -415,6 +417,8 @@
   - #### [413. 等差数列划分](https://leetcode-cn.com/problems/arithmetic-slices/)
   
   - #### [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
+  
+  - #### [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
 
 #### 滑动窗口
 

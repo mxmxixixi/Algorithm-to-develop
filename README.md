@@ -7,6 +7,12 @@
 
 ### 分类题目
 
+#### 哈希表法
+
+- 题目
+
+  - #### [160. 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)
+
 #### 删除改变字符符合规定元素
 
 - 题目
@@ -48,6 +54,8 @@
   - #### [680. 验证回文字符串 Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/)
   
   - #### [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+  
+  - #### [160. 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)
 
 #### 广度优先搜索
 

@@ -102,6 +102,8 @@
   - #### [1391. 检查网格中是否存在有效路径](https://leetcode-cn.com/problems/check-if-there-is-a-valid-path-in-a-grid/)
 
   - #### [752. 打开转盘锁](https://leetcode-cn.com/problems/open-the-lock/)
+  
+  - #### [104. 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
 
 #### 深度优先搜索
 
@@ -218,6 +220,8 @@
   - #### [971. 翻转二叉树以匹配先序遍历](https://leetcode-cn.com/problems/flip-binary-tree-to-match-preorder-traversal/)
 
   - #### [529. 扫雷游戏](https://leetcode-cn.com/problems/minesweeper/)
+  
+  - #### [104. 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
 
 #### 分治算法
 
@@ -457,8 +461,9 @@
 #### 二叉树
 
 - 定义
-  - 深度周游(递归)，广度周游(队列)
-
+  
+- 深度周游(递归)，广度周游(队列)
+  
 - 题目
 
   - #### [101. 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)

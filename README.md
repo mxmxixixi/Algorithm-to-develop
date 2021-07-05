@@ -83,6 +83,41 @@
   - [简书链接](https://www.jianshu.com/p/bff70b786bb6)
   - [掘金](https://juejin.cn/post/6844904133204377608)
 
+- JavaScript实现思路
+
+  ```javascript
+   /** 
+    * 广度优先搜索 
+    * @param tree 需要查找的树 
+    * @param target 需要查找的结点 
+    * @returns {{children}|*|undefined|boolean} 
+    */
+    function depthFirstSearch (tree, target) {    
+      // 用数组模拟队列，将树放进队列中    
+      let stack = [tree];    
+      while(stack.length!==0){       
+        // 取出数组的的第一个元素       
+        const stackTop = stack.shift();        
+        // 判断当前节点是否有子结点        
+        if (stackTop.children && stackTop.children.length) {            
+          /**            
+          * 将子结点入队列：            
+          *  1. 使用扩展运算符取出参数对象,           
+          *  2. 将取出的对象放进栈中          
+          */           
+          stack.push(...stackTop.children);       
+        }       
+          // 判断当前节点的元素是否为目标值        
+          if (stackTop.value === target) {            
+            return stackTop;        
+          }    
+      }    
+      return false;
+    }
+  ```
+
+  
+
 - 题目
 
   - #### [1091. 二进制矩阵中的最短路径](https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/)
@@ -131,7 +166,7 @@
     - 判断当前栈顶的元素是否与要查找的元素相等，如果相等则返回当前元素
     - 栈中数据全部遍历后，还是没找到目标结点，则证明目标结点不在树中，返回 false
 
-    ```
+    ```javascript
       /** 
       * 深度优先搜索 
       * @param tree 需要查找的树 
@@ -144,7 +179,7 @@
         while(stack.length!==0){       
           // 取出数组的最后一个元素(栈顶)        
           const stackTop = stack.pop();        
-          // 判断当前栈是否有子结点        
+          // 判断当前节点是否有子结点        
           if (stackTop.children && stackTop.children.length) {            
             /**            
             * 将子结点入栈：            
@@ -323,7 +358,6 @@
   - #### [1508. 子数组和排序后的区间和](https://leetcode-cn.com/problems/range-sum-of-sorted-subarray-sums/)
   
   - #### [75. 颜色分类](https://leetcode-cn.com/problems/sort-colors/)
-  
 
 ##### 插入排序
 
@@ -348,7 +382,6 @@
   - #### [147. 对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list/)
   
   - #### [1333. 餐厅过滤器](https://leetcode-cn.com/problems/filter-restaurants-by-vegan-friendly-price-and-distance/)
-  
 
 ###### 二分插入排序
 
